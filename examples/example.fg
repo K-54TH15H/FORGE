@@ -1,0 +1,18 @@
+var CC = g++
+var[] CFILES = main.cpp
+var[] OBJS = main.o
+
+var BIN = prog
+
+rule forge($BIN):
+
+rule BIN($OBJS):
+	g++ $OBJS -o $BIN
+
+rule $OBJS($CFILES):
+	g++ $CFILES -c $OBJS
+
+rule clean:
+	del $BIN
+	del $OBJS
+
